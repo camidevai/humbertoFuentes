@@ -1,0 +1,57 @@
+{
+  "CREATOR_NAME": "Humberto Pablo Fuentes Lagos",
+  "HANDLE": "@humbertofuentescl", 
+  "LOCATION": "Tocopilla, Antofagasta, Chile",
+
+  "PLATFORMS": {
+    "instagram": {
+      "followers": 152249,
+      "growth_30d_percent": 5.9,
+      "net_followers_30d": 8518,
+      "started_following_30d": 11879,
+      "unfollowed_30d": 3361,
+      "views_30d": 4112580,
+      "reach_30d": 601737,
+      "interactions_30d": 114920,
+      "interactions_split_30d": { "followers_percent": 63.2, "non_followers_percent": 36.8 },
+      "views_by_format_30d": { "reels_percent": 86.0, "stories_percent": 6.8, "posts_percent": 6.6, "live_percent": 0.5 },
+      "interactions_by_format_30d": { "reels_percent": 90.9, "live_percent": 4.2, "posts_percent": 2.7, "stories_percent": 2.1 },
+      "top_reels_30d_views": [359721, 243376, 133234, 78563, 76748, 72558, 61992, 55783, 51491]
+    },
+    "tiktok": {
+      "audience_gender_percent": { "male": 48, "female": 52 },
+      "peak_activity": { "window": "Lunes 20:00–21:00", "basis": "últimos 7 días" },
+      "summary_28d": { "post_views": 2300000, "profile_views": 26000, "likes": 76000, "comments": 5512, "shares": 1715, "rewards_usd": 1.93, "traffic_for_you_percent": 82.9 },
+      "summary_60d": { "post_views": 5000000, "profile_views": 42000, "likes": 120000, "comments": 8973, "shares": 4173, "rewards_usd": 2.74, "traffic_for_you_percent": 84.7 },
+      "summary_365d": { "post_views": 28000000, "profile_views": 232000, "likes": 686000, "comments": 41000, "shares": 47000, "traffic_for_you_percent": 86.2 },
+      "watchers_60d": { "total": 1800000, "new": 383000, "gender_percent": { "male": 48, "female": 52 } },
+      "watchers_365d": { "total": 15000000, "new": 2000000, "gender_percent": { "male": 45, "female": 54 } },
+      "top_posts_60d_views": [472000, 283000, 266000, 178000, 162000, 134000],
+      "top_posts_365d_views": [1300000, 890000, 879000, 830000, 704000, 578000]
+    }
+  },
+
+  "CONTACT": {
+    "email": null,
+    "whatsapp": null, 
+    "sla_hours": 24
+  },
+
+  "PACKAGES": {
+    "starter": null,
+    "performance": null,
+    "full": null
+  },
+
+  "ADDONS": ["UGC sin posting", "Whitelisting 30 días", "Uso de imagen 60 días"],
+
+  "CASE_STUDIES": [
+    { "title": "Reel respuesta — alto alcance", "views": 359721, "link": null, "thumb": "/public/case-ig-1.jpg", "platform": "instagram" },
+    { "title": "Reel respuesta — comunidad", "views": 243376, "link": null, "thumb": "/public/case-ig-2.jpg", "platform": "instagram" },
+    { "title": "TikTok — respuesta viral", "views": 472000, "link": null, "thumb": "/public/case-tt-1.jpg", "platform": "tiktok" }
+  ],
+
+  "TESTIMONIALS": [
+    { "name": null, "company": null, "rating": 5, "quote": null }
+  ]
+}

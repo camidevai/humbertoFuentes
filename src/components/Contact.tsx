@@ -62,13 +62,16 @@ const Contact: React.FC = () => {
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
 
       const templateParams = {
+        titulo: `Nueva consulta de ${formData.company}`,
         from_name: formData.name,
-        from_company: formData.company,
         from_email: formData.email,
+        from_company: formData.company,
         budget: formData.budget,
         objective: formData.objective,
         deadline: formData.deadline,
         message: formData.message,
+        nombre: formData.name, // Variable adicional para compatibilidad
+        email: formData.email, // Variable adicional para compatibilidad
         to_email: content.CONTACT.email
       };
 

@@ -193,12 +193,12 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
             <div className="text-gray-500 text-xs text-center md:text-right">
               Desarrollado con ❤️ para el crecimiento de marcas por{' '}
               <a
-                href="https://www.camidevai.com"
+                href="https://www.instagram.com/camidevai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-gold hover:text-primary-blue transition-colors"
               >
-                www.camidevai.com
+                camidevai
               </a>
             </div>
           </div>

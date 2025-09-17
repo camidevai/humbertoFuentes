@@ -31,9 +31,9 @@
     }
   },
 
-  "CONTACT": {
-    "email": null,
-    "whatsapp": null, 
+ "CONTACT": {
+    "email": "hfuenteslagos@gmail.com",
+    "whatsapp": "https://wa.me/56931472753", 
     "sla_hours": 24
   },
 
@@ -46,11 +46,16 @@
   "ADDONS": ["UGC sin posting", "Whitelisting 30 días", "Uso de imagen 60 días"],
 
   "CASE_STUDIES": [
-    { "title": "TikTok Video 1", "views": "Pendiente", "link": "https://www.tiktok.com/@humbertofuentescl/video/7384108555579706630", "platform": "tiktok" },
-    { "title": "TikTok Video 2", "views": "Pendiente", "link": "https://www.tiktok.com/@humbertofuentescl/video/7384223509821639942", "platform": "tiktok" },
-    { "title": "TikTok Video 3", "views": "Pendiente", "link": "https://www.tiktok.com/@humbertofuentescl/video/7385269522523098373", "platform": "tiktok" },
-    { "title": "TikTok Video 4", "views": "Pendiente", "link": "https://www.tiktok.com/@humbertofuentescl/video/7482811106990230790", "platform": "tiktok" },
-    { "title": "TikTok Video 5", "views": "Pendiente", "link": "https://www.tiktok.com/@humbertofuentescl/video/7398417846860041478", "platform": "tiktok" }
+    { "title": "TikTok Video 1", "views": 1800000, "link": "https://www.tiktok.com/@humbertofuentescl/video/7384108555579706630", "platform": "tiktok" },
+    { "title": "TikTok Video 2", "views": 960000, "link": "https://www.tiktok.com/@humbertofuentescl/video/7384223509821639942", "platform": "tiktok" },
+    { "title": "TikTok Video 3", "views": 792000, "link": "https://www.tiktok.com/@humbertofuentescl/video/7385269522523098373", "platform": "tiktok" },
+    { "title": "TikTok Video 4", "views": 1300000, "link": "https://www.tiktok.com/@humbertofuentescl/video/7482811106990230790", "platform": "tiktok" },
+    { "title": "TikTok Video 5", "views": 1300000, "link": "https://www.tiktok.com/@humbertofuentescl/video/7398417846860041478", "platform": "tiktok" },
+    { "title": "Instagram Reel 1", "views": 366000, "link": "https://www.instagram.com/reel/DOJ3mNWkcpC/?utm_source=ig_web_copy_link", "platform": "instagram" },
+    { "title": "Instagram Reel 2", "views": 247000, "link": "https://www.instagram.com/reel/DOPK7rkkQr3/?utm_source=ig_web_copy_link", "platform": "instagram" },
+    { "title": "Instagram Reel 3", "views": 77000, "link": "https://www.instagram.com/reel/DOOn--wjWMM/?utm_source=ig_web_copy_link", "platform": "instagram" },
+    { "title": "Instagram Reel 4", "views": 79000, "link": "https://www.instagram.com/reel/DOkRHvEjJiC/?utm_source=ig_web_copy_link", "platform": "instagram" },
+    { "title": "Instagram Reel 5", "views": 72000, "link": "https://www.instagram.com/reel/DNrL_K7YiMk/?utm_source=ig_web_copy_link", "platform": "instagram" }
 
   ],
 

@@ -70,6 +70,28 @@ const CaseStudies: React.FC = () => {
     }
   };
 
+  const getTikTokImage = (index: number) => {
+    const tiktokImages = [
+      'https://subir-imagen.com/images/2025/09/17/1.jpg',
+      'https://subir-imagen.com/images/2025/09/17/2a80773f0a3c197cc.jpg',
+      'https://subir-imagen.com/images/2025/09/17/3.jpg',
+      'https://subir-imagen.com/images/2025/09/17/4.jpg',
+      'https://subir-imagen.com/images/2025/09/17/5.jpg'
+    ];
+    return tiktokImages[index] || null;
+  };
+
+  const getInstagramImage = (index: number) => {
+    const instagramImages = [
+      'https://subir-imagen.com/images/2025/09/17/4188b458ac94411a9.jpg',
+      'https://subir-imagen.com/images/2025/09/17/5a488fa037f4d245e.jpg',
+      'https://subir-imagen.com/images/2025/09/17/1c8f716fa83ed6e6f.md.jpg',
+      'https://subir-imagen.com/images/2025/09/17/2.jpg',
+      'https://subir-imagen.com/images/2025/09/17/3.jpg'
+    ];
+    return instagramImages[index] || null;
+  };
+
   return (
     <section id="cases" className="section-padding bg-gradient-to-b from-primary-dark/30 to-transparent">
       <div className="container-custom">
@@ -93,103 +115,132 @@ const CaseStudies: React.FC = () => {
 
         {/* Cases Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {content.CASE_STUDIES.map((caseStudy, index) => (
-            <motion.a
-              key={index}
-              href={caseStudy.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="glass-card-hover group overflow-hidden cursor-pointer block"
-            >
-              {/* Case Image */}
-              <div className="relative overflow-hidden rounded-t-xl">
-                <div className="relative w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                  {/* Platform Preview */}
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-16 h-16 mx-auto mb-3 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        {getPlatformLogo(caseStudy.platform)}
+          {content.CASE_STUDIES.map((caseStudy, index) => {
+            // Contadores específicos por plataforma
+            const tiktokIndex = content.CASE_STUDIES.slice(0, index).filter(c => c.platform === 'tiktok').length;
+            const instagramIndex = content.CASE_STUDIES.slice(0, index).filter(c => c.platform === 'instagram').length;
+            
+            const tiktokImage = caseStudy.platform === 'tiktok' ? getTikTokImage(tiktokIndex) : null;
+            const instagramImage = caseStudy.platform === 'instagram' ? getInstagramImage(instagramIndex) : null;
+            const backgroundImage = tiktokImage || instagramImage;
+            
+            // Debug temporal
+            console.log(`Case ${index}: Platform: ${caseStudy.platform}, Title: ${caseStudy.title}`);
+            console.log(`TikTok Index: ${tiktokIndex}, Instagram Index: ${instagramIndex}`);
+            console.log(`TikTok Image: ${tiktokImage}`);
+            console.log(`Instagram Image: ${instagramImage}`);
+            console.log(`Final Background Image: ${backgroundImage}`);
+            console.log('---');
+            
+            return (
+              <motion.a
+                key={index}
+                href={caseStudy.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="glass-card-hover group overflow-hidden cursor-pointer block"
+              >
+                {/* Case Image */}
+                <div className="relative overflow-hidden rounded-t-xl">
+                  <div className="relative w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                    {/* Background Image */}
+                    {backgroundImage && (
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: `url(${backgroundImage})` }}
+                      />
+                    )}
+                    
+                    {/* Platform Preview */}
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <div className="w-16 h-16 mx-auto mb-3 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          {getPlatformLogo(caseStudy.platform)}
+                        </div>
+                        <div className="text-sm font-medium">{getPlatformText(caseStudy.platform)}</div>
                       </div>
-                      <div className="text-sm font-medium">{getPlatformText(caseStudy.platform)}</div>
+                    </div>
+                    
+                    {/* Background pattern for non-TikTok */}
+                    {!tiktokImage && (
+                      <div className="absolute inset-0 opacity-10">
+                        <div className={`w-full h-full bg-gradient-to-br ${
+                          caseStudy.platform === 'instagram'
+                            ? 'from-pink-400/20 to-purple-500/20'
+                            : 'from-primary-blue/20 to-primary-gold/20'
+                        }`}></div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-center gap-2 text-white bg-black/50 backdrop-blur-sm rounded-lg py-2 px-4">
+                        <ExternalLink className="w-4 h-4" />
+                        <span className="text-sm font-medium">{getPlatformText(caseStudy.platform)}</span>
+                      </div>
                     </div>
                   </div>
-                  {/* Background pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className={`w-full h-full bg-gradient-to-br ${
-                      caseStudy.platform === 'instagram'
-                        ? 'from-pink-400/20 to-purple-500/20'
-                        : 'from-primary-blue/20 to-primary-gold/20'
-                    }`}></div>
+
+                  {/* Platform Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium border ${getPlatformColor(caseStudy.platform)}`}>
+                      {getPlatformIcon(caseStudy.platform)}
+                      {caseStudy.platform.toUpperCase()}
+                    </span>
+                  </div>
+
+                  {/* Performance Badge */}
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-primary-gold/90 text-primary-dark px-2 py-1 rounded text-xs font-semibold">
+                      {typeof caseStudy.views === 'string' ? caseStudy.views : formatNumber(caseStudy.views as number)} views
+                    </div>
                   </div>
                 </div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center justify-center gap-2 text-white bg-black/50 backdrop-blur-sm rounded-lg py-2 px-4">
+                {/* Case Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-primary-gold transition-colors">
+                    {caseStudy.title}
+                  </h3>
+
+                  {/* Metrics */}
+                  <div className="text-center p-4 glass-card rounded-lg mb-4">
+                    <div className="flex items-center justify-center gap-1 text-primary-gold mb-2">
+                      <Eye className="w-5 h-5" />
+                    </div>
+                    <div className="text-2xl font-bold text-white mb-1">
+                      {typeof caseStudy.views === 'string' ? caseStudy.views : formatNumber(caseStudy.views as number)}
+                    </div>
+                    <div className="text-sm text-gray-400">Views totales</div>
+                    <div className="text-xs text-primary-gold mt-1 font-medium">
+                      {caseStudy.platform.toUpperCase()}
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  {caseStudy.link ? (
+                    <a
+                      href={caseStudy.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary-gold hover:text-primary-blue transition-colors text-sm font-medium"
+                    >
                       <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm font-medium">{getPlatformText(caseStudy.platform)}</span>
-                    </div>
-                  </div>
+                      Ver contenido
+                    </a>
+                  ) : (
+                    <span className="text-gray-500 text-sm">Contenido archivado</span>
+                  )}
                 </div>
-
-                {/* Platform Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium border ${getPlatformColor(caseStudy.platform)}`}>
-                    {getPlatformIcon(caseStudy.platform)}
-                    {caseStudy.platform.toUpperCase()}
-                  </span>
-                </div>
-
-                {/* Performance Badge */}
-                <div className="absolute top-4 right-4">
-                  <div className="bg-primary-gold/90 text-primary-dark px-2 py-1 rounded text-xs font-semibold">
-                    {typeof caseStudy.views === 'string' ? caseStudy.views : formatNumber(caseStudy.views as number)} views
-                  </div>
-                </div>
-              </div>
-
-              {/* Case Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-primary-gold transition-colors">
-                  {caseStudy.title}
-                </h3>
-
-                {/* Metrics */}
-                <div className="text-center p-4 glass-card rounded-lg mb-4">
-                  <div className="flex items-center justify-center gap-1 text-primary-gold mb-2">
-                    <Eye className="w-5 h-5" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {typeof caseStudy.views === 'string' ? caseStudy.views : formatNumber(caseStudy.views as number)}
-                  </div>
-                  <div className="text-sm text-gray-400">Views totales</div>
-                  <div className="text-xs text-primary-gold mt-1 font-medium">
-                    {caseStudy.platform.toUpperCase()}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                {caseStudy.link ? (
-                  <a
-                    href={caseStudy.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary-gold hover:text-primary-blue transition-colors text-sm font-medium"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Ver contenido
-                  </a>
-                ) : (
-                  <span className="text-gray-500 text-sm">Contenido archivado</span>
-                )}
-              </div>
-            </motion.a>
-          ))}
+              </motion.a>
+            );
+          })}
         </div>
 
         {/* Performance Summary */}
@@ -244,3 +295,8 @@ const CaseStudies: React.FC = () => {
 };
 
 export default CaseStudies;
+
+
+
+
+

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Hero from './components/Hero';
 import WhyMe from './components/WhyMe';
 import Audience from './components/Audience';
-import Packages from './components/Packages';
+
 import CaseStudies from './components/CaseStudies';
 import Process from './components/Process';
 import FAQ from './components/FAQ';

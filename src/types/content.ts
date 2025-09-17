@@ -27,9 +27,8 @@ export interface TikTokData {
 
 export interface CaseStudy {
   title: string;
-  views: number;
+  views: number | string;
   link: string | null;
-  thumb: string;
   platform: string;
 }
 

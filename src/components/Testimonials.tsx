@@ -55,21 +55,7 @@ const Testimonials: React.FC = () => {
     setIsAutoPlaying(false);
   };
 
-  const goToTestimonial = (index: number) => {
-    setCurrentIndex(index);
-    setIsAutoPlaying(false);
-  };
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`w-5 h-5 ${
-          i < rating ? 'text-primary-gold fill-current' : 'text-gray-600'
-        }`}
-      />
-    ));
-  };
 
   return (
     <section className="section-padding bg-gradient-to-b from-primary-dark/50 to-transparent">

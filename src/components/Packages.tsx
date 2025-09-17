@@ -15,22 +15,7 @@ const Packages: React.FC = () => {
     <section id="packages" className="section-padding bg-gradient-to-b from-transparent to-primary-dark/30">
       <div className="container-custom">
         
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Formatos &{' '}
-            <span className="gradient-text">Paquetes para Marcas</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Soluciones estratégicas diseñadas para diferentes objetivos de marketing
-          </p>
-        </motion.div>
+     
 
         {/* Packages Grid */}
         {!packagesAvailable ? (

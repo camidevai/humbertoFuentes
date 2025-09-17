@@ -3,7 +3,13 @@ import { motion } from 'framer-motion';
 import { Instagram, Youtube, MessageCircle, Mail, MapPin, ExternalLink } from 'lucide-react';
 import content from '../content.json';
 
-const Footer: React.FC = () => {
+type PageType = 'main' | 'terms' | 'privacy' | 'usage';
+
+interface FooterProps {
+  onPageChange: (page: PageType) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -35,9 +41,9 @@ const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { name: 'Términos de servicio', href: '#' },
-    { name: 'Política de privacidad', href: '#' },
-    { name: 'Derechos de uso', href: '#' }
+    { name: 'Términos de servicio', action: () => onPageChange('terms') },
+    { name: 'Política de privacidad', action: () => onPageChange('privacy') },
+    { name: 'Derechos de uso', action: () => onPageChange('usage') }
   ];
 
   return (
@@ -173,19 +179,27 @@ const Footer: React.FC = () => {
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center gap-6">
               {legalLinks.map((link, index) => (
-                <a
+                <button
                   key={index}
-                  href={link.href}
-                  className="text-gray-400 hover:text-primary-gold transition-colors text-sm"
+                  onClick={link.action}
+                  className="text-gray-400 hover:text-primary-gold transition-colors text-sm underline"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
             </div>
 
             {/* Developer Credit */}
             <div className="text-gray-500 text-xs text-center md:text-right">
-              Desarrollado con ❤️ para el crecimiento de marcas
+              Desarrollado con ❤️ para el crecimiento de marcas por{' '}
+              <a
+                href="https://www.camidevai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-gold hover:text-primary-blue transition-colors"
+              >
+                www.camidevai.com
+              </a>
             </div>
           </div>
         </motion.div>

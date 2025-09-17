@@ -4,6 +4,15 @@ import { TrendingUp, Users, MapPin, Zap } from 'lucide-react';
 import content from '../content.json';
 
 const WhyMe: React.FC = () => {
+  // Function to format large numbers for mobile display
+  const formatNumber = (num: number): string => {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+      return (num / 1000).toFixed(0) + 'K';
+    }
+    return num.toString();
+  };
   const reasons = [
     {
       icon: <TrendingUp className="w-8 h-8 text-primary-gold" />,
@@ -29,17 +38,17 @@ const WhyMe: React.FC = () => {
 
   const metrics = [
     {
-      value: content.PLATFORMS.instagram.followers.toLocaleString(),
+      value: formatNumber(content.PLATFORMS.instagram.followers),
       label: "Seguidores Instagram",
       suffix: ""
     },
     {
-      value: content.PLATFORMS.instagram.views_30d.toLocaleString(),
+      value: formatNumber(content.PLATFORMS.instagram.views_30d),
       label: "Vistas IG (30 días)",
       suffix: ""
     },
     {
-      value: content.PLATFORMS.tiktok.summary_60d.post_views.toLocaleString(),
+      value: formatNumber(content.PLATFORMS.tiktok.summary_60d.post_views),
       label: "Vistas TikTok (60 días)",
       suffix: ""
     },

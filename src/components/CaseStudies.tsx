@@ -4,6 +4,16 @@ import { ExternalLink, Eye, Instagram } from 'lucide-react';
 import content from '../content.json';
 
 const CaseStudies: React.FC = () => {
+  // Function to format large numbers for mobile display
+  const formatNumber = (num: number): string => {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+      return (num / 1000).toFixed(0) + 'K';
+    }
+    return num.toString();
+  };
+
   const getPlatformIcon = (platform: string) => {
     switch (platform.toLowerCase()) {
       case 'instagram':
@@ -138,7 +148,7 @@ const CaseStudies: React.FC = () => {
                 {/* Performance Badge */}
                 <div className="absolute top-4 right-4">
                   <div className="bg-primary-gold/90 text-primary-dark px-2 py-1 rounded text-xs font-semibold">
-                    {typeof caseStudy.views === 'string' ? caseStudy.views : (caseStudy.views as number).toLocaleString()} views
+                    {typeof caseStudy.views === 'string' ? caseStudy.views : formatNumber(caseStudy.views as number)} views
                   </div>
                 </div>
               </div>
@@ -155,7 +165,7 @@ const CaseStudies: React.FC = () => {
                     <Eye className="w-5 h-5" />
                   </div>
                   <div className="text-2xl font-bold text-white mb-1">
-                    {caseStudy.views.toLocaleString()}
+                    {typeof caseStudy.views === 'string' ? caseStudy.views : formatNumber(caseStudy.views as number)}
                   </div>
                   <div className="text-sm text-gray-400">Views totales</div>
                   <div className="text-xs text-primary-gold mt-1 font-medium">

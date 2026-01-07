@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { LogOut, Save, RotateCcw, Settings, BarChart3, Users, Package, FileText, MessageSquare, Eye, Key } from 'lucide-react';
+import { LogOut, RotateCcw, BarChart3, Users, Package, FileText, MessageSquare, Eye, Key } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useContent } from '../../contexts/ContentContext';
 import SocialMetricsEditor from './editors/SocialMetricsEditor';
@@ -18,7 +18,7 @@ const AdminDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('basic');
   const [showPreview, setShowPreview] = useState(false);
   const { logout } = useAuth();
-  const { content, resetContent } = useContent();
+  const { resetContent } = useContent();
 
   const tabs = [
     { id: 'basic' as TabType, label: 'Información Básica', icon: <FileText className="w-5 h-5" /> },

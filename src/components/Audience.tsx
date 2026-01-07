@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Calendar, MapPin, Heart } from 'lucide-react';
-import content from '../content.json';
+import { useContent } from '../contexts/ContentContext';
 
 const Audience: React.FC = () => {
+  const { content } = useContent();
   const demographicData = [
     {
       icon: <Users className="w-6 h-6 text-primary-gold" />,

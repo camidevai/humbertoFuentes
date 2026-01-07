@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MessageCircle, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import content from '../content.json';
+import { useContent } from '../contexts/ContentContext';
 
 interface FormData {
   name: string;
@@ -15,6 +15,7 @@ interface FormData {
 }
 
 const Contact: React.FC = () => {
+  const { content } = useContent();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     company: '',

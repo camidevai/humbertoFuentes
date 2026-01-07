@@ -204,10 +204,12 @@ public/
 El Media Kit ha sido actualizado con métricas reales de rendimiento:
 
 ### 🎯 Datos de Audiencia
-- **Seguidores Instagram**: 12,500
-- **Vistas promedio (30 días)**: 45,000
-- **Engagement rate**: 4.2% (superior al promedio de la industria)
-- **Demografía**: 58% hombres, 42% mujeres, principalmente 25-44 años
+- **Seguidores Instagram**: 165,000
+- **Seguidores TikTok**: 172,000
+- **Vistas Instagram (30 días)**: 4.1M
+- **Vistas TikTok (60 días)**: 5M
+- **Engagement rate**: Superior al promedio de la industria
+- **Demografía TikTok**: 48% hombres, 52% mujeres
 
 ### 📹 Videos de Alto Rendimiento (TikTok)
 1. **Estrategia de Franquicias**: 28,500 vistas (CTR 6.8%)

@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Eye, Instagram } from 'lucide-react';
-import content from '../content.json';
+import { useContent } from '../contexts/ContentContext';
 
 const CaseStudies: React.FC = () => {
+  const { content } = useContent();
+
   // Function to format large numbers for mobile display
   const formatNumber = (num: number): string => {
     if (num >= 1000000) {
@@ -135,7 +137,7 @@ const CaseStudies: React.FC = () => {
             return (
               <motion.a
                 key={index}
-                href={caseStudy.link}
+                href={caseStudy.link || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}

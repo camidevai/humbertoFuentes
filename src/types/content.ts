@@ -14,6 +14,7 @@ export interface InstagramData {
 }
 
 export interface TikTokData {
+  followers: number;
   audience_gender_percent: { male: number; female: number };
   peak_activity: { window: string; basis: string };
   summary_28d: { post_views: number; profile_views: number; likes: number; comments: number; shares: number; rewards_usd: number; traffic_for_you_percent: number };

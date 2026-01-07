@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, MapPin, Zap } from 'lucide-react';
-import content from '../content.json';
+import { useContent } from '../contexts/ContentContext';
 
 const WhyMe: React.FC = () => {
+  const { content } = useContent();
+
   // Function to format large numbers for mobile display
   const formatNumber = (num: number): string => {
     if (num >= 1000000) {
@@ -43,6 +45,11 @@ const WhyMe: React.FC = () => {
       suffix: ""
     },
     {
+      value: formatNumber(content.PLATFORMS.tiktok.followers),
+      label: "Seguidores TikTok",
+      suffix: ""
+    },
+    {
       value: formatNumber(content.PLATFORMS.instagram.views_30d),
       label: "Vistas IG (30 días)",
       suffix: ""
@@ -50,11 +57,6 @@ const WhyMe: React.FC = () => {
     {
       value: formatNumber(content.PLATFORMS.tiktok.summary_60d.post_views),
       label: "Vistas TikTok (60 días)",
-      suffix: ""
-    },
-    {
-      value: `${content.PLATFORMS.tiktok.summary_60d.traffic_for_you_percent}%`,
-      label: "Distribución For You",
       suffix: ""
     }
   ];

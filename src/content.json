@@ -5,7 +5,7 @@
 
   "PLATFORMS": {
     "instagram": {
-      "followers": 152249,
+      "followers": 165000,
       "growth_30d_percent": 5.9,
       "net_followers_30d": 8518,
       "started_following_30d": 11879,
@@ -19,6 +19,7 @@
       "top_reels_30d_views": [359721, 243376, 133234, 78563, 76748, 72558, 61992, 55783, 51491]
     },
     "tiktok": {
+      "followers": 172000,
       "audience_gender_percent": { "male": 48, "female": 52 },
       "peak_activity": { "window": "Lunes 20:00–21:00", "basis": "últimos 7 días" },
       "summary_28d": { "post_views": 2300000, "profile_views": 26000, "likes": 76000, "comments": 5512, "shares": 1715, "rewards_usd": 1.93, "traffic_for_you_percent": 82.9 },

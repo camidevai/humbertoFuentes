@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
-import content from '../content.json';
+import { useContent } from '../contexts/ContentContext';
 
 const Hero: React.FC = () => {
+  const { content } = useContent();
+
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };

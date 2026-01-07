@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Star, Package } from 'lucide-react';
-import content from '../content.json';
+import { useContent } from '../contexts/ContentContext';
 
 const Packages: React.FC = () => {
+  const { content } = useContent();
+
   // Check if packages are available
   const packagesAvailable = content.PACKAGES.starter !== null;
 
